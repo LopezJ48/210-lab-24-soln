@@ -160,10 +160,22 @@ void find_goat_by_name(list<Goat> &trip){
 }
 
 void display_youngest_oldest_goat(list<Goat> &trip){
-    auto youngest = min_element()
+    auto youngest = min_element(trip.begin(), trip.end(), [](const Goat& a, const Goat& b){return a.get_age() < b.get_age();});
+    auto oldest = max_element(trip.begin(), trip.end(), [](const Goat& a, const Goat& b){return a.get_age() < b.get_age();});
+    cout << " youngest goat is: " << youngest -> get_name()<< youngest-> get_age();
+    cout << "Oldest goat is: " << oldest -> get_name()<< oldest -> get_age();
 }
-void sort_goat_age(list<Goat> &trip);
-void remove_goat_color(list<Goat> &trip);
+void sort_goat_age(list<Goat> &trip){
+    trip.sort([](const Goat& a, const Goat& b) {return a.get_age() < b.get_age(); });
+    cout << "Goats have been sorted."
+}
+void remove_goat_color(list<Goat> &trip){
+    string color;
+    cout << "Pick a color you want to remove: ";
+    cin >> ws;
+    getline(cin, color);
+    trip.remove_if[color](const Goat& g){}
+}
 void increase_age_of_goats(list<Goat> &trip);
 void shuffle_goats(list<Goat> &trip);
 void find_avg_age(list<Goat> &trip);
