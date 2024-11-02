@@ -3,6 +3,9 @@
 #include <iomanip>
 #include <list>
 #include "Goat.h"
+#include <algorithm>
+#include <cstdlib>
+#include <numeric>
 using namespace std;
 
 const int SZ_NAMES = 200, SZ_COLORS = 25;
@@ -12,6 +15,14 @@ void delete_goat(list<Goat> &trip);
 void add_goat(list<Goat> &trip, string [], string []);
 void display_trip(list<Goat> trip);
 int main_menu();
+void count_goats_by_age(list<Goat> &trip);
+void find_goat_by_name(list<Goat> &trip);
+void display_youngest_oldest_goat(list<Goat> &trip);
+void sort_goat_age(list<Goat> &trip);
+void remove_goat_color(list<Goat> &trip);
+void increase_age_of_goats(list<Goat> &trip);
+void shuffle_goats(list<Goat> &trip);
+void find_avg_age(list<Goat> &trip);
 
 int main() {
     srand(time(0));
