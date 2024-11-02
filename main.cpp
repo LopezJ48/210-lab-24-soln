@@ -142,19 +142,26 @@ void count_goats_by_age(list<Goat> &trip){
     int age;
     cout << "Enter an age to count: ";
     cin >> age;
-    int count = count_if(trip.begin(),trip.end(),[age])(Goat& g){return g.get_name() == name;});
+    int count = count_if(trip.begin(),trip.end(),[age](Goat& g){return g.get_age() == age;});
     cout << "number of goats with age " << age << count << endl;
 }
 
 void find_goat_by_name(list<Goat> &trip){
     string name;
     cout << "Enter name: ";
-    cin >> input;
-    getline(cin, name)
+    cin >> ws;
+    getline(cin, name);
     auto it = find_if(trip.begin(), trip.end(), [name](Goat& g){return g.get_name() == name;});
-    if (it )
+    if (it != trip.end()) {
+        cout << "found " << it -> get_name() << "," << it->get_age() << "," << it->get_color() << endl;
+    } else{
+        cout << "Goat not found.";
+    }
 }
-void display_youngest_oldest_goat(list<Goat> &trip);
+
+void display_youngest_oldest_goat(list<Goat> &trip){
+    auto youngest = min_element()
+}
 void sort_goat_age(list<Goat> &trip);
 void remove_goat_color(list<Goat> &trip);
 void increase_age_of_goats(list<Goat> &trip);
