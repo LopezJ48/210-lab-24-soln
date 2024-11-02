@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <cstdlib>
 #include <numeric>
+#include <vector>
 using namespace std;
 
 const int SZ_NAMES = 200, SZ_COLORS = 25;
@@ -226,7 +227,10 @@ void increase_age_of_goats(list<Goat> &trip){
 }
 
 void shuffle_goats(list<Goat> &trip){
-
+vector<Goat> goatVector(trip.begin(),trip.end());
+random_shuffle(goatVector.begin(),goatVector.end());
+trip.assign(goatVector.begin(), goatVector.end());
+cout << "Goats shuffled.";
 }
 
 void find_avg_age(list<Goat> &trip){
