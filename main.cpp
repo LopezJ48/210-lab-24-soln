@@ -137,3 +137,26 @@ int select_goat(list<Goat> trp) {
     }
     return input;
 }
+
+void count_goats_by_age(list<Goat> &trip){
+    int age;
+    cout << "Enter an age to count: ";
+    cin >> age;
+    int count = count_if(trip.begin(),trip.end(),[age])(Goat& g){return g.get_name() == name;});
+    cout << "number of goats with age " << age << count << endl;
+}
+
+void find_goat_by_name(list<Goat> &trip){
+    string name;
+    cout << "Enter name: ";
+    cin >> input;
+    getline(cin, name)
+    auto it = find_if(trip.begin(), trip.end(), [name](Goat& g){return g.get_name() == name;});
+    if (it )
+}
+void display_youngest_oldest_goat(list<Goat> &trip);
+void sort_goat_age(list<Goat> &trip);
+void remove_goat_color(list<Goat> &trip);
+void increase_age_of_goats(list<Goat> &trip);
+void shuffle_goats(list<Goat> &trip);
+void find_avg_age(list<Goat> &trip);
