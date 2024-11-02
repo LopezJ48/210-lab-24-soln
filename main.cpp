@@ -90,15 +90,15 @@ int main() {
             remove_goat_color(trip);
             break;
             case 9: 
-            cout << "Counting by age.\n";
+            cout << "increase age of goats.\n";
             increase_age_of_goats(trip);
             break;
             case 10: 
-            cout << "Counting by age.\n";
+            cout << "shuffle the goats.\n";
             shuffle_goats(trip);
             break;
             case 11: 
-            cout << "Counting by age.\n";
+            cout << "find the average age of goats.\n";
             find_avg_age(trip);
             break;
             default:
@@ -117,11 +117,19 @@ int main_menu() {
     cout << "[1] Add a goat\n";
     cout << "[2] Delete a goat\n";
     cout << "[3] List goats\n";
-    cout << "[4] Quit\n";
+    cout << "[4] count goats by age\n";
+    cout << "[5] Find goat by name\n";
+    cout << "[6] show youngest to oldest goat\n";
+    cout << "[7] sort goats by age\n";
+    cout << "[8] remove colors of goats\n";
+    cout << "[9] increase age of goats\n";
+    cout << "[10] shuffle the goats\n";
+    cout << "[11] find the average age of goats\n";
+    cout << "[12] quit\n";
     cout << "Choice --> ";
     int choice;
     cin >> choice;
-    while (choice < 1 || choice > 4) {
+    while (choice < 1 || choice > 12) {
         cout << "Invalid, again --> ";
         cin >> choice;
     }
@@ -200,7 +208,7 @@ void display_youngest_oldest_goat(list<Goat> &trip){
 
 void sort_goat_age(list<Goat> &trip){
     trip.sort([](const Goat& a, const Goat& b) {return a.get_age() < b.get_age(); });
-    cout << "Goats have been sorted."
+    cout << "Goats have been sorted.";
 }
 
 void remove_goat_color(list<Goat> &trip){
@@ -214,7 +222,7 @@ void remove_goat_color(list<Goat> &trip){
 
 void increase_age_of_goats(list<Goat> &trip){
     for_each(trip.begin(), trip.end(),[](Goat& g){g.set_age(g.get_age() + 1); });
-    cout << "Increased the goats age by 1"
+    cout << "Increased the goats age by 1";
 }
 
 void shuffle_goats(list<Goat> &trip){
